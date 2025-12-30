@@ -1,0 +1,363 @@
+main{
+    height: 100vh;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.imageContent , .imageContent1{
+    width: 30%;
+    height: 70%;
+    margin-top: 7%;
+}
+
+header h2{
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 2%;
+}
+
+.imageContent img{
+    width: 100%;
+    padding-left: 20%;
+    animation: slide 1s ease-in-out forwards;
+}
+
+.imageContent1 img{
+    width: 100%;
+    height: auto;
+    animation: slide-out 1s ease-in-out forwards;
+}
+
+.contentBox {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    gap: 70px;
+}
+
+.loginContent {
+    border: 1px solid black;
+    display: inline-block;
+    height: 90%;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 3%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginContent img{
+    width: 30%;
+    height: auto;
+    margin:  8%;
+    margin-left: 30%;
+    z-index: 30;
+    animation: jump 1s ease-in-out forwards;
+    animation-fill-mode: both;
+}
+
+.logoContainer{
+  width: 100%;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 9px;
+    animation: jump 1s ease-in-out forwards;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.loginContent input{
+    height: 2.5rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.162);
+    padding: 5px;
+    padding-left: 17px;
+}
+
+.loginContent input::placeholder{
+    color: gray;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 9px;
+    margin-top: 12%;
+    animation: jump 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+
+.loginContent .forgot{
+    font-size: 0.8rem;
+    padding-right: 7%;
+    text-align: end;
+    color: rgb(65, 64, 64);
+    animation: jump 1s ease-in-out forwards;
+    animation-delay: 0.7s;
+    animation-fill-mode: both;
+    margin-top: 5%;
+}
+
+.loginBtn{
+    width: 86%;
+    margin-left: 7%;
+    height: 2.5rem;
+    margin-top: 5%;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+    animation: jump 1s ease-in-out forwards;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    background-image: radial-gradient( circle farthest-corner at 32.7% 49.8%,  rgba(28,88,238,1) 0%, rgba(0,39,137,1) 100.2% );
+}
+
+.register{
+    font-size: 0.8rem;
+    text-align: center;
+    animation: jump 1s ease-in-out forwards;
+    animation-delay: 1.2s;
+    animation-fill-mode: both;
+    margin-top: 5%;
+}
+
+
+@keyframes slide{
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(-30px);
+        opacity: 1;
+    }
+}
+
+@keyframes jump{
+    from{
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out{
+    from{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(30px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:980px) {
+  .imageContent, .imageContent1 {
+    display: none;
+  }
+
+  .contentBox {
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .loginContent {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 10%;
+    height: 80%;
+  }
+
+  .loginContent img {
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  .logoContainer{
+    width: 100%;
+  }
+
+  .logoContainer img{
+    margin-left: 33%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contentBox {
+    flex-direction: column; /* stack items vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .imageContent, .imageContent1 {
+    display: none; /* hide side images on mobile */
+  }
+
+  .loginContent {
+    width: 90%;
+    height: auto;
+    margin-top: 0;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
+    padding-bottom: 2rem;
+  }
+
+  .loginContent img {
+    width: 80px;
+    padding-left: 0;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    margin: 0 auto;
+  }
+
+  .email, .password {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 5%;
+  }
+
+  .loginContent input {
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
+
+  .forgot {
+    font-size: 0.75rem;
+    text-align: right;
+    padding-right: 5%;
+  }
+
+  .loginBtn {
+    width: 90%;
+    margin: 1.5rem auto;
+    display: block;
+    font-size: 1rem;
+    height: 2.8rem;
+  }
+
+  .register {
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+  }
+
+  .logoContainer{
+    width: 100%;
+  }
+
+  .logoContainer img{
+    margin-left: 37%;
+  }
+}
+
+
+@media screen and (max-width: 390px) {
+
+
+
+  .loginContent {
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 20px 10px;
+    box-shadow: none;     
+    margin-top: 20%;
+  }
+
+  .loginContent input {
+    height: 1.8rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .loginBtn {
+    width: 90%;
+    margin: 1.2rem auto;
+    display: block;
+    font-size: 1rem;
+    height: 2.2rem;
+  }
+
+  .forgot {
+    text-align: right;
+    padding-right: 8%;
+    font-size: 0.75rem;
+  }
+
+  .register {
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  header h2{
+    position: absolute;
+    top: 10%;
+    left: 23%;
+  }
+
+  .Container {
+    display: none; 
+  }
+}
+
+
+.notification {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0.95;
+}
+
+.success {
+  background-color: #28a745; /* green */
+}
+
+.error {
+  background-color: #d8172a; /* red */
+}

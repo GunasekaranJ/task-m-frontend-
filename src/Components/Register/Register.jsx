@@ -34,7 +34,7 @@ function Register() {
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, { username, email, password });
       showNotification("Registration successful! Redirecting to login...", "success");
-      setTimeout(() => navigate("/"), 1500);
+      setTimeout(() => navigate("/login"), 1500);
     } catch (err) {
       if (err.response && err.response.status === 409) {
         showNotification("Email already exists!", "error");

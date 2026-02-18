@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* LOGO */
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  transition: transform 0.8s ease-in-out;
+}
+
+.logo img{
+  height: 120px;
+  width: 120px;
+}
+
+/* Move logo slightly upward */
+.move-up {
+  transform: translateY(-20px);
+}
+
+/* CONTENT */
+.content {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 1;
+}

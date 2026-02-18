@@ -6,19 +6,15 @@ import pencil from './pencil.png'
 
 function Todolist({id,title,description,deleteTodo,onToggle,isdone}) {
 
-  const [isFinish, setFinished] = useState(false);
-
   const complete = () => {
-    const newStatus = !isFinish;
-    setFinished(newStatus);
-    onToggle(id, newStatus); 
-  };
+     onToggle(id, !isdone)
+  }
 
   return (
     <>
        <div className={styles.todoBox}
        style={{
-        backgroundColor: isFinish ? 'rgba(0, 255, 0, 0.3)' : 'rgba(212, 210, 252, 1)'
+        backgroundColor: isdone ? 'rgba(0, 255, 0, 0.3)' : 'rgba(212, 210, 252, 1)'
       }}>
             <input type="checkbox" 
               checked={isdone}

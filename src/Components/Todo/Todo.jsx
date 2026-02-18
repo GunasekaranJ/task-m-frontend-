@@ -24,7 +24,7 @@ function Todo() {
 
   // Fetch all todos
   const fetchTodos = () => {
-    axios.get(`${import.meta.env.VITE_API_URL}/todo/alltodo`, {
+    axios.get(`${import.meta.env.VITE_API_URL}/todo/all`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -76,7 +76,7 @@ function Todo() {
 
 
   const totalTask = todos.length;
- const completedTask = Object.values(completedStatus).filter(Boolean).length;
+ const completedTask = todos.filter(todo => todo.isdone).length;
   const inCompleteTask = totalTask - completedTask;
 
 
@@ -132,7 +132,7 @@ function Todo() {
                 description={todo.description}
                 deleteTodo={deleteTodo}
                 onToggle={handleToggle}
-                checked={todo.isdone}
+                isdone={todo.isdone}
               />
             ))}
           </div>
